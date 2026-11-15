@@ -45,12 +45,15 @@ score = Σ(信号权重 × 主题命中) − 最近用过的 − 今天已用过
 ## 安装
 
 ```sh
-# 1. 装进 profile（CLI 路径；桌面端用「插件」面板安装效果相同）
-dsh plugin --profile <profile> add dsh-classic-quotes
+# 装进 profile（CLI 路径；桌面端用「插件」面板安装效果相同）
+# CLI 会自动把它写进该 profile 的 dsh.profile.bundles，不用手改 package.json
+dsh plugin --profile <profile> add github:sido-meet/dsh-classic-quotes
+```
 
-# 2. 声明为 profile 层（CLI 不会自动写这一行）
-#    在 ~/.dsh/profiles/<profile>/package.json 里：
-#    "dsh": { "profile": { "bundles": ["...", "dsh-classic-quotes"] } }
+发布到 npm 之后也可以用包名装（商店只从 npm 安装）：
+
+```sh
+dsh plugin --profile <profile> add dsh-classic-quotes
 ```
 
 本地开发直接指向源码目录即可，改完刷新页面就生效：
@@ -58,6 +61,8 @@ dsh plugin --profile <profile> add dsh-classic-quotes
 ```sh
 dsh plugin --profile quote-test add E:\path\to\dsh-classic-quotes
 ```
+
+源码：<https://github.com/sido-meet/dsh-classic-quotes>
 
 ---
 
