@@ -1,0 +1,70 @@
+{
+  "name": "dsh-classic-quotes",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness 插件「名人语录」：侧栏每日一条、回合应时而变的鼓励卡、可核查出处的语录墙，并附带一个可独立复用的名人著作生平 MCP server",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./corpus": {
+      "default": "./lib/corpus.js"
+    },
+    "./queries": {
+      "default": "./lib/queries.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-classic-quotes-mcp": "./bin/mcp.js"
+  },
+  "files": [
+    "lib",
+    "data",
+    "bin",
+    "scripts",
+    "docs",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "quote",
+    "mcp",
+    "名人语录",
+    "古典文学"
+  ],
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js && node --check bin/mcp.js",
+    "test": "node scripts/selftest.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "author": "dsh-classic-quotes contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sido-meet/dsh-classic-quotes.git"
+  },
+  "homepage": "https://github.com/sido-meet/dsh-classic-quotes#readme",
+  "bugs": {
+    "url": "https://github.com/sido-meet/dsh-classic-quotes/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  }
+}
